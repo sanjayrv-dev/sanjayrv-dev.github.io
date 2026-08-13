@@ -129,7 +129,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);
 .sm{grid-column:span 3;font-size:.66rem;color:var(--dim);min-height:48px}
 
 .spotify{border-radius:10px;overflow:hidden;border:1px solid var(--line);margin-top:.9rem}
-.spotify iframe{display:block;width:100%;height:80px;border:0}
+.spotify iframe{display:block;width:100%;height:152px;border:0}
 
 .links{display:flex;flex-wrap:wrap;gap:1.6rem;align-items:baseline}
 .links a{color:var(--dim);text-decoration:none;font-size:.82rem;letter-spacing:.02em;
@@ -270,7 +270,7 @@ footer{margin-top:4.4rem;font-size:.68rem;color:var(--dim);letter-spacing:.06em;
 
     <!-- Replace TRACK_ID: Spotify > Share > Copy Song Link >
          open.spotify.com/track/TRACK_ID?si=... -->
-    <div class="spotify">
+    <div class="spotify" id="spotifyBox">
       <iframe src="https://open.spotify.com/embed/track/TRACK_ID?utm_source=generator&theme=0"
         loading="lazy"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
@@ -571,6 +571,12 @@ if(outSec && !outSec.classList.contains('hidden')){
       bars.forEach(function(bar,idx){ var ago=29-idx,n=days[ago]||0;
         bar.style.height=(n?Math.max(4,Math.round(n/peak*32)):2)+'px'; if(n) bar.classList.add('on'); });
     }).catch(function(){});
+}
+
+/* hide the Spotify box until a real track id is filled in */
+var sBox = document.getElementById('spotifyBox');
+if(sBox && sBox.querySelector('iframe').getAttribute('src').indexOf('TRACK_ID') !== -1){
+  sBox.style.display = 'none';
 }
 
 var d2=new Date();
