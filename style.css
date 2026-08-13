@@ -70,7 +70,7 @@ body{
 
 /* the attractor traces behind the entire page. it sits under the grain and
    the vignette, which is what keeps it from competing with body copy. */
-#lorenz{opacity:.45;mix-blend-mode:screen}
+#lorenz{opacity:.8;mix-blend-mode:screen}
 
 .neb{position:absolute;border-radius:50%;filter:blur(130px);will-change:transform}
 .n1{
@@ -184,6 +184,7 @@ body{
 .tag.rot-l{transform:translate3d(var(--px),var(--py),0) rotate(-4deg)}
 .tag.rot-r{transform:translate3d(var(--px),var(--py),0) rotate(3.5deg)}
 .tag.dimmed{color:var(--faint);font-size:.72rem}
+.tag.route{color:var(--dim);font-size:.78rem;letter-spacing:.03em}
 .sig{letter-spacing:.1em;font-size:.62rem;line-height:1.9}
 .sig span{color:var(--crimson);letter-spacing:.16em;text-transform:uppercase;font-size:.56rem}
 
@@ -256,7 +257,7 @@ body{
    scrim that fades in just past the hero. it stays visible, it stops competing. */
 main{
   position:relative;z-index:10;
-  background:linear-gradient(rgba(8,8,11,0),rgba(8,8,11,.72) 7rem);
+  background:linear-gradient(rgba(8,8,11,0),rgba(8,8,11,.85) 7rem);
 }
 .wrap{max-width:var(--col);margin:0 auto;padding:0 1.5rem 7rem}
 .sec{margin-top:5.5rem}

@@ -51,7 +51,7 @@ track.innerHTML += track.innerHTML;          /* duplicate for a seamless -50% ro
    typed lead line
    ───────────────────────────────────────────── */
 (function () {
-  var line = 'i build things to find out why they break.';
+  var line = 'every edge decays. go find another one.';
   var out  = $('#typeline');
   if (reduce) { out.textContent = line; return; }
   var i = 0;
@@ -166,13 +166,13 @@ track.innerHTML += track.innerHTML;          /* duplicate for a seamless -50% ro
     var cx = W / 2, cy = H * .48;
     var n = trail.length / 3, chunks = 14, per = Math.ceil(n / chunks);
 
-    g.lineWidth = 1.1 * DPR;
+    g.lineWidth = 1.5 * DPR;
     g.lineJoin = 'round';
     g.lineCap = 'round';
 
     /* oldest tail fades out, so the head reads as "now" */
     for (var c = 0; c < chunks; c++) {
-      g.strokeStyle = 'rgba(230,52,74,' + (.05 + (c / (chunks - 1)) * .5).toFixed(3) + ')';
+      g.strokeStyle = 'rgba(248,68,92,' + (.14 + (c / (chunks - 1)) * .84).toFixed(3) + ')';
       g.beginPath();
       var from = c * per, to = Math.min(n, from + per + 1);
       for (var i = from; i < to; i++) {
@@ -220,24 +220,9 @@ track.innerHTML += track.innerHTML;          /* duplicate for a seamless -50% ro
 })();
 
 /* ─────────────────────────────────────────────
-   hero: loss curve + dot matrix
+   hero: dot matrix
    ───────────────────────────────────────────── */
 (function () {
-  /* a random walk with drift — an equity curve, drawn once and deterministic */
-  function walk(el, drift, vol, seed) {
-    var d = '', n = 48, rnd = seed, v = .18;
-    for (var i = 0; i < n; i++) {
-      var t = i / (n - 1);
-      rnd = (rnd * 1103515245 + 12345) & 0x7fffffff;      /* deterministic LCG */
-      v += drift + ((rnd / 0x7fffffff) - .5) * vol;
-      d += (i ? 'L' : 'M') + (10 + t * 122).toFixed(1) + ' ' +
-           (58 - clamp(v, 0, 1) * 50).toFixed(1) + ' ';
-    }
-    el.setAttribute('d', d.trim());
-  }
-  walk($('#eqPath'),  .0125, .055, 9127);   /* the strategy */
-  walk($('#eqPath2'), .0040, .030, 4471);   /* the benchmark it has to beat */
-
   /* dot matrix blob */
   var mx = $('#matrix'), chars = ' ..:-=+*#%@', rows = 9, cols = 26, s = '';
   for (var r = 0; r < rows; r++) {
