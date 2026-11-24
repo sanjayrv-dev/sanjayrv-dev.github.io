@@ -94,8 +94,8 @@ def main():
     X = 84
     d.text((X, 196), "sanjay", font=serif, fill=(237, 237, 240))
     d.line([(X + 3, 366), (X + 92, 366)], fill=(196, 30, 58), width=3)
-    d.text((X, 398), "cs + math @ kennesaw state", font=mono, fill=(190, 190, 199))
-    d.text((X, 446), "aspiring quant trader · founding hacksu", font=mono_s, fill=(139, 139, 150))
+    d.text((X, 398), "cs + math @ georgia tech", font=mono, fill=(190, 190, 199))
+    d.text((X, 446), "aspiring quant trader · ex-founder @ hacksu", font=mono_s, fill=(139, 139, 150))
 
     d.text((X, 92), "MARIETTA, GA", font=mono_xs, fill=(240, 66, 86))
     d.text((X, H - 62), "sanjayrv-dev.github.io", font=mono_xs, fill=(139, 139, 150))

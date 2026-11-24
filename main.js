@@ -6,7 +6,7 @@
 'use strict';
 
 var GH_USER   = 'sanjayrv-dev';
-var BUILD     = '2026.08.13';
+var BUILD     = '2026.11.24';
 var reduce    = matchMedia('(prefers-reduced-motion: reduce)').matches;
 var fine      = matchMedia('(hover: hover) and (pointer: fine)').matches;
 var DPR       = Math.min(devicePixelRatio || 1, 2);

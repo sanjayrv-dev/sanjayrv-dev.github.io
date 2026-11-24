@@ -231,7 +231,7 @@ body{
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
           mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
 }
-.tape-track{display:flex;white-space:nowrap;animation:roll 46s linear infinite}
+.tape-track{display:flex;white-space:nowrap;animation:roll 52s linear infinite}
 @keyframes roll{to{transform:translateX(-50%)}}
 .tick{
   font-size:.68rem;letter-spacing:.06em;padding:0 1.4rem;color:var(--dim);
